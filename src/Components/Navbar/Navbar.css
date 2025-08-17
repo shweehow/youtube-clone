@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@layer base{
+    nav{
+        @apply flex justify-between sticky py-2 px-[2%] z-10;
+    }
+
+    .nav-l .menu-icon{
+        @apply w-6 mr-6;
+    }
+
+    .nav-l .logo{
+        @apply w-32;
+    }
+
+    .nav-mid .search-box{
+        @apply border border-gray-300 mr-4 py-2 px-3 rounded-3xl;
+    }
+
+    .nav-mid .search-box input{
+        @apply outline-0 w-[400px];
+    }
+
+    .nav-mid .search-box img{
+        @apply w-4;
+    }
+    
+    .nav-r img{
+        @apply w-6 mr-6;
+    }
+
+    .nav-r .user-icon{
+        @apply w-9 rounded-full;
+    }
+}
+
+@layer components{
+    
+}
