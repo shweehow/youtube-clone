@@ -2,7 +2,7 @@
 
 @layer base{
     nav{
-        @apply flex justify-between sticky py-2 px-[2%] z-10;
+        @apply flex justify-between sticky py-2 px-[2%] z-10 shadow-md;
     }
 
     .nav-l .menu-icon{

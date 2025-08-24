@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer components{
+    .sidebar{
+        @apply fixed w-fit h-screen top-0 pl-[2%] pt-20 bg-white;
+    }
+
+    .shortcut-links img{
+        @apply w-5 mr-5;
+    } 
+    
+    .side-link{
+        @apply flex items-center w-fit flex-wrap mb-5 cursor-pointer;
+    }
+
+    .sidebar hr{
+        @apply border-0 w-[85%] h-[1px] bg-gray-300;
+    }
+    
+    .subscribed-list h3{
+        @apply text-sm font-semibold my-5 text-gray-600;
+    }
+
+    .subscribed-list img{
+        @apply w-6 rounded-full mr-5;
+    }
+}
