@@ -24,4 +24,15 @@
     .subscribed-list img{
         @apply w-6 rounded-full mr-5;
     }
+
+    .small-sidebar p{
+        @apply hidden;
+    }
+
+    .small-sidebar h3{
+        @apply hidden;
+    }
+    .small-sidebar hr{
+        @apply w-1/2 mb-4;
+    }
 }
