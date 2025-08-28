@@ -10,6 +10,16 @@
     }
 }
 
+@layer components{
+    .nav-icon{
+        @apply w-5;
+    }
+
+    .logo{
+        @apply w-28;
+    }
+}
+
 @layer utilities{
     .flex-div{
         display: flex;

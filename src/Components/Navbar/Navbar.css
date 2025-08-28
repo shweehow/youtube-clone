@@ -1,16 +1,19 @@
 @import 'tailwindcss';
 
-@layer base{
+@layer components{
     nav{
-        @apply flex justify-between sticky py-2 px-[2%] z-10 shadow-md;
+        @apply fixed flex justify-between w-full px-4 py-1.5 z-10 bg-white;
     }
 
-    .nav-l .menu-icon{
-        @apply w-6 mr-6;
+    .nav-l{
+        @apply gap-3;
     }
 
-    .nav-l .logo{
-        @apply w-32;
+    nav button{
+        @apply rounded-full p-2.5 cursor-pointer;
+    }
+    nav button:hover{
+        @apply bg-neutral-300;
     }
 
     .nav-mid .search-box{
@@ -24,16 +27,12 @@
     .nav-mid .search-box img{
         @apply w-4;
     }
-    
-    .nav-r img{
-        @apply w-6 mr-6;
+
+    .nav-r{
+        @apply gap-2 px-2;
     }
 
     .nav-r .user-icon{
         @apply w-9 rounded-full;
     }
-}
-
-@layer components{
-    
 }

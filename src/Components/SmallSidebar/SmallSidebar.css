@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer components{
+    .smallSidebar{
+        @apply fixed flex-col left-0 h-full px-1 pt-14;
+    }
+
+    .smallSidebar img{
+        @apply w-6;
+    }
+
+    .smallSidebar p{
+        @apply absolute text-[10px] font-medium bottom-3;
+    }
+
+    .smallSidebar button{
+        @apply relative flex justify-center px-5 pt-3 pb-8 rounded-lg;
+    }
+    .smallSidebar button:hover{
+        @apply bg-neutral-300;
+    }
+}

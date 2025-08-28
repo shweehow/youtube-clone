@@ -1,38 +1,57 @@
 @import "tailwindcss";
 
 @layer components{
+    .overlay{
+        @apply fixed w-screen h-screen bg-black/30 z-20;
+    }
+
     .sidebar{
-        @apply fixed w-fit h-screen top-0 pl-[2%] pt-20 bg-white;
+        @apply z-30 w-60 h-full top-0 bg-white;
     }
 
-    .shortcut-links img{
-        @apply w-5 mr-5;
-    } 
-    
-    .side-link{
-        @apply flex items-center w-fit flex-wrap mb-5 cursor-pointer;
+    .logo-container{
+        @apply mx-3 px-1 py-1.5 gap-3;
     }
 
-    .sidebar hr{
-        @apply border-0 w-[85%] h-[1px] bg-gray-300;
+    .logo-container button{
+        @apply rounded-full p-2.5 cursor-pointer;
     }
-    
-    .subscribed-list h3{
-        @apply text-sm font-semibold my-5 text-gray-600;
-    }
-
-    .subscribed-list img{
-        @apply w-6 rounded-full mr-5;
+    .logo-container button:hover{
+        @apply bg-neutral-300;
     }
 
-    .small-sidebar p{
-        @apply hidden;
+    .sidelinks{
+        @apply overflow-y-scroll;
     }
 
-    .small-sidebar h3{
-        @apply hidden;
+    .sidelinks > *{
+        @apply my-3 px-3;
     }
-    .small-sidebar hr{
-        @apply w-1/2 mb-4;
+
+    .sidelinks > * h3{
+        @apply px-3 mb-2.5 font-medium
+    }
+
+    .sidelinks button{
+        @apply flex w-full gap-6 px-3 py-2 rounded-lg;
+    }
+    .sidelinks button:hover{
+        @apply bg-neutral-300;
+    }
+
+    .sidelinks img{
+        @apply w-6;
+    }
+
+    .sidelinks p{
+        @apply text-sm font-medium
+    }
+
+    .subscribed img{
+        @apply rounded-full;
+    }
+
+    hr{
+        @apply w-9/10 mx-auto text-neutral-300;
     }
 }

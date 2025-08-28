@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components{
+    .container{
+        @apply pt-20 pl-20;
+    }
+}
