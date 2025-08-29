@@ -2,11 +2,17 @@
 
 @layer components{
     .overlay{
-        @apply fixed w-screen h-screen bg-black/30 z-20;
+        @apply fixed inset-0 bg-black/30 opacity-0 pointer-events-none z-20 transition duration-150;
+    }
+    .overlay.active{
+        @apply opacity-100 pointer-events-auto;
     }
 
     .sidebar{
-        @apply z-30 w-60 h-full top-0 bg-white;
+        @apply fixed -translate-x-full z-30 w-60 h-full top-0 bg-white transition duration-300;
+    }
+    .sidebar.active{
+        @apply translate-x-0;
     }
 
     .logo-container{
@@ -36,7 +42,7 @@
         @apply flex w-full gap-6 px-3 py-2 rounded-lg;
     }
     .sidelinks button:hover{
-        @apply bg-neutral-300;
+        @apply bg-neutral-200;
     }
 
     .sidelinks img{

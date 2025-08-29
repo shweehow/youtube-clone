@@ -8,16 +8,18 @@ import Sidebar from './Components/Sidebar/Sidebar'
 
 const App = () => {
 
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
 
   return (
     <div>
-      <Sidebar />
+      <Sidebar sidebar={sidebar} setSidebar={setSidebar}/>
       <Navbar setSidebar={setSidebar}/>
-      <Routes>
-        <Route path='/' element={<Home sidebar={sidebar}/>} />
-        <Route path='/video/:categoryId/:videoId' element={<Video/>} />
-      </Routes>
+      <div id="wrapper">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/video/:categoryId/:videoId' element={<Video/>} />
+        </Routes>
+      </div>
     </div>
   )
 }

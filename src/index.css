@@ -18,6 +18,11 @@
     .logo{
         @apply w-28;
     }
+
+    .lock-scroll{
+        position: fixed;
+        overflow-y: scroll;
+    }
 }
 
 @layer utilities{
