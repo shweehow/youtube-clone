@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer components{
+    .playVideo{
+        @apply flex flex-col px-6 pt-20 gap-4;
+    }
+
+    .playVideo video{
+        @apply rounded-xl
+    }
+    
+    .playVideo h1{
+        @apply text-xl font-bold;
+    }
+
+    .playVideo h2{
+        @apply font-medium;
+    }
+
+    .playVideo h3{
+        @apply text-sm font-medium;
+    }
+
+    .playVideo h4{
+        @apply text-[13px] font-medium;
+    }
+
+    .playVideo p{
+        @apply text-sm;
+    }
+
+    .playVideo span{
+        @apply text-xs text-neutral-600;
+    }
+
+    .profile-pic{
+        @apply w-10 rounded-full;
+    }
+
+    .publisher{
+        @apply flex gap-2.5 items-center ;
+    }
+
+    .buttonsdiv{
+        @apply flex justify-between;
+    }
+
+    .buttonsdiv button{
+        @apply flex items-center gap-1.5 h-9 px-4.5 rounded-3xl cursor-pointer bg-neutral-200;
+    }
+    .buttonsdiv button:hover{
+        @apply bg-neutral-300;
+    }
+    .buttonsdiv button:active{
+        @apply bg-neutral-400;
+    }
+
+    .buttonsdiv button img{
+        @apply w-5;
+    }
+
+    button.subbtn{
+        @apply ml-4 bg-red-600 text-white;
+    }
+
+    .likediv{
+        @apply flex;
+    }
+
+    button.likebtn{
+        @apply relative rounded-r-none;
+    }
+
+    button.dislikebtn{
+        @apply rounded-l-none;
+    }
+
+    .buttons-r{
+        @apply flex gap-1.5;
+    }
+
+    .vid-desc{
+        @apply rounded-xl bg-neutral-100 p-3
+    }
+
+    .comments-section{
+        @apply flex flex-col gap-6;
+    }
+
+    .comments-section h1{
+        @apply mb-2;
+    }
+
+    .comment{
+        @apply flex items-start gap-3;
+    }
+
+    .comment-r{
+        @apply flex flex-col gap-1;
+    }
+
+    .commentor{
+        @apply flex gap-1.5;
+    }
+
+    .comment-likes{
+        @apply flex items-center gap-1;
+    }
+
+    .comment-likes img{
+        @apply w-5;
+    }
+
+    .comment-likes button{
+        @apply flex items-center gap-1 p-1.5 rounded-full cursor-pointer;
+    }
+    .comment-likes button:hover{
+        @apply bg-neutral-200;
+    }
+    .comment-likes button:active{
+        @apply bg-neutral-300;
+    }
+}

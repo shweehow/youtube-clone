@@ -31,6 +31,10 @@
         position: fixed;
         overflow-y: scroll;
     }
+
+    .vertical{
+        @apply absolute right-0 w-[1px] h-7/10 bg-neutral-400 z-10;
+    }
 }
 
 @layer utilities{
