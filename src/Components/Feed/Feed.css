@@ -6,7 +6,11 @@
     }
 
     .card img{
-        @apply rounded-md mb-2;
+        @apply w-full rounded-md mb-2;
+    }
+
+    .textdiv{
+        @apply px-2;
     }
 
     .card h2{

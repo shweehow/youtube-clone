@@ -6,7 +6,7 @@
     }
 
     .nav-l{
-        @apply gap-3;
+        @apply gap-3 mr-5 sm:mr-16;
     }
 
     nav button{
@@ -16,12 +16,16 @@
         @apply bg-neutral-300;
     }
 
+    .nav-mid{
+        @apply flex-1 justify-center;
+    }
+
     .nav-mid .search-box{
-        @apply border border-gray-300 mr-4 py-2 px-3 rounded-3xl;
+        @apply border border-gray-300 w-full max-w-[600px] gap-2 py-2 px-3 rounded-3xl;
     }
 
     .nav-mid .search-box input{
-        @apply outline-0 w-[400px];
+        @apply outline-0 w-full;
     }
 
     .nav-mid .search-box img{
@@ -29,7 +33,11 @@
     }
 
     .nav-r{
-        @apply gap-2 px-2;
+        @apply gap-2 px-2 ml-2;
+    }
+
+    .nav-r button{
+        @apply hidden sm:inline-block;
     }
 
     .nav-r .user-icon{
