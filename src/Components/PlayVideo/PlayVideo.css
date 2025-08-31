@@ -2,35 +2,11 @@
 
 @layer components{
     .playVideo{
-        @apply flex flex-col px-6 pt-20 gap-4;
+        @apply flex flex-col gap-4;
     }
 
     .playVideo video{
         @apply rounded-xl
-    }
-    
-    .playVideo h1{
-        @apply text-xl font-bold;
-    }
-
-    .playVideo h2{
-        @apply font-medium;
-    }
-
-    .playVideo h3{
-        @apply text-sm font-medium;
-    }
-
-    .playVideo h4{
-        @apply text-[13px] font-medium;
-    }
-
-    .playVideo p{
-        @apply text-sm;
-    }
-
-    .playVideo span{
-        @apply text-xs text-neutral-600;
     }
 
     .profile-pic{

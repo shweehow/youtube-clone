@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer components{
+    .recommended{
+        @apply flex flex-col gap-2;
+    }
+
+    .recommended h1{
+        @apply mb-3;
+    }
+
+    .rec-card{
+        @apply flex gap-1.5;
+    }
+    .rec-card:hover{
+        @apply bg-neutral-100 cursor-pointer;
+    }
+
+    .rec-card img{
+        @apply w-[170px] rounded-lg;
+    }
+
+    .rec-card-r{
+        @apply flex flex-col;
+    }
+}

@@ -7,8 +7,6 @@ import sports from '../../assets/sports.png'
 import entertainment from '../../assets/entertainment.png'
 import tech from '../../assets/tech.png'
 import music from '../../assets/music.png'
-import blogs from '../../assets/blogs.png'
-import news from '../../assets/news.png'
 
 const SmallSidebar = () => {
   return (
