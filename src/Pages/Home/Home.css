@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @layer components{
-    .container{
-        @apply pt-20 pl-20;
+    .feedCon{
+        @apply pt-20 md:pl-16;
     }
 }

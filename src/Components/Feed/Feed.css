@@ -2,6 +2,22 @@
 
 @layer components{
     .feed{
-        @apply grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1;
+        @apply grid px-4 gap-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1;
+    }
+
+    .card img{
+        @apply rounded-md mb-2;
+    }
+
+    .card h2{
+        @apply font-medium leading-[22px];
+    }
+
+    .card h3{
+        @apply text-sm text-neutral-600;
+    }
+
+    .card p{
+        @apply text-sm text-neutral-600;
     }
 }

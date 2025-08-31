@@ -12,7 +12,7 @@ import news from '../../assets/news.png'
 
 const SmallSidebar = () => {
   return (
-    <div className="smallSidebar flex-div">
+    <div className="smallSidebar">
       <button><img src={home} alt="" /><p>Home</p></button>
       <button><img src={game_icon} alt="" /><p>Gaming</p></button>
       <button><img src={automobiles} alt="" /><p>Automobiles</p></button>

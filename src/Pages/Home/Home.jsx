@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <SmallSidebar />
-      <div className='container'>
+      <div className='feedCon'>
         <Feed />
       </div>
     </>

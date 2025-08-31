@@ -2,7 +2,7 @@
 
 @layer components{
     .smallSidebar{
-        @apply fixed flex-col left-0 h-full px-1 pt-14;
+        @apply hidden md:flex align-middle fixed flex-col left-0 h-full px-1 pt-14;
     }
 
     .smallSidebar img{
