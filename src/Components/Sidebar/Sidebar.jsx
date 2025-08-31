@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Sidebar.css'
 import menu_icon from '../../assets/menu.png'
 import logo from '../../assets/logo.png'
@@ -18,25 +18,6 @@ import megan from '../../assets/megan.png'
 import cameron from '../../assets/cameron.png'
 
 const Sidebar = ({sidebar, setSidebar}) => {
-
-  const wrapper = document.getElementById('wrapper')
-
-  useEffect(() => {
-    if (sidebar) {
-      const scrollY = window.scrollY;
-      document.body.style.overflow = "scroll";
-      wrapper.style.position = "fixed";
-      wrapper.style.top = `-${scrollY}px`;
-    } else {
-      const scrollY = parseInt(wrapper.style.top || "0") * -1;
-      document.body.style.overflow = "";
-      wrapper.style.position = "";
-      wrapper.style.top = "";
-      window.scrollTo(0, scrollY);
-    }
-  }, [sidebar]);
-
-
   return (
     <>
       <div className={`overlay ${sidebar? "active":""}`} onClick={()=>setSidebar(prev => !prev)}></div>
