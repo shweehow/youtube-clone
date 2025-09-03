@@ -6,7 +6,8 @@
     }
 
     .card img{
-        @apply w-full rounded-md mb-2;
+        @apply w-full rounded-md mb-2 object-cover;
+        aspect-ratio: 16/9;
     }
 
     .textdiv{

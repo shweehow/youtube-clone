@@ -14,9 +14,13 @@
     }
 
     .smallSidebar button{
-        @apply relative flex justify-center px-5 pt-3 pb-8 rounded-lg;
+        @apply relative flex justify-center px-5 pt-3 pb-8 rounded-lg cursor-pointer;
     }
     .smallSidebar button:hover{
         @apply bg-neutral-300;
+    }
+
+    .smallSidebar button.active{
+        @apply bg-neutral-200 hover:bg-neutral-300;
     }
 }

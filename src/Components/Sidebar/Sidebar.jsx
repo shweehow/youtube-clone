@@ -37,8 +37,8 @@ const Sidebar = ({sidebar, setSidebar}) => {
             <button><img src={entertainment} alt="" /><p>Entertainment</p></button>
             <button><img src={tech} alt="" /><p>Technology</p></button>
             <button><img src={music} alt="" /><p>Music</p></button>
-            <button><img src={blogs} alt="" /><p>Blogs</p></button>
-            <button><img src={news} alt="" /><p>News</p></button>
+            <button><img src={blogs} alt="22" /><p>Blogs</p></button>
+            <button><img src={news} alt="25" /><p>News</p></button>
           </div>
           <hr />
           <div className="subscribed">
