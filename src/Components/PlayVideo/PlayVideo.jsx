@@ -8,10 +8,11 @@ import save from '../../assets/save.png'
 import jack from '../../assets/jack.png'
 import user_profile from '../../assets/user_profile.jpg'
 
-const PlayVideo = () => {
+const PlayVideo = ({vidId}) => {
   return (
     <div className='playVideo'>
-      <video src={video1} controls autoPlay muted></video>
+      {/* <video src={video1} controls autoPlay muted></video> */}
+      <iframe src={`https://www.youtube.com/embed/${vidId}`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <h1>Best YouTube Channel to learn Web Development</h1>
       <div className="buttonsdiv">
         <div className="publisher">

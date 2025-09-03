@@ -36,7 +36,7 @@ const App = () => {
       <div ref={wrapperRef}>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/video/:categoryId/:videoId' element={<Video/>} />
+          <Route path='/video/:catId/:vidId' element={<Video/>} />
         </Routes>
       </div>
     </div>

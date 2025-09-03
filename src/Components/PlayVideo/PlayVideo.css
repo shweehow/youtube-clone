@@ -2,11 +2,12 @@
 
 @layer components{
     .playVideo{
-        @apply flex flex-col gap-4;
+        @apply flex flex-col gap-4 w-full;
     }
 
-    .playVideo video{
-        @apply rounded-xl
+    .playVideo iframe{
+        @apply rounded-xl;
+        aspect-ratio: 16/9;
     }
 
     .profile-pic{
