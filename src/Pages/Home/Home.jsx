@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Home.css'
 import Feed from '../../Components/Feed/Feed'
 import SmallSidebar from '../../Components/Small-sidebar/SmallSidebar'
 
-const Home = () => {
-
-  const [cat, setCat] = useState(0);
-
+const Home = ({cat, setCat}) => {
   return (
     <>
       <SmallSidebar cat={cat} setCat={setCat}/>

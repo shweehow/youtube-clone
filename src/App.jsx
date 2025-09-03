@@ -9,6 +9,7 @@ import Sidebar from './Components/Sidebar/Sidebar'
 const App = () => {
 
   const [sidebar, setSidebar] = useState(false);
+  const [cat, setCat] = useState(0);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -31,11 +32,11 @@ const App = () => {
 
   return (
     <div>
-      <Sidebar sidebar={sidebar} setSidebar={setSidebar}/>
+      <Sidebar cat={cat} setCat={setCat} sidebar={sidebar} setSidebar={setSidebar}/>
       <Navbar setSidebar={setSidebar}/>
       <div ref={wrapperRef}>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home cat={cat} setCat={setCat}/>} />
           <Route path='/video/:catId/:vidId' element={<Video/>} />
         </Routes>
       </div>

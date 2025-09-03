@@ -16,8 +16,9 @@ import simon from '../../assets/simon.png'
 import tom from '../../assets/tom.png'
 import megan from '../../assets/megan.png'
 import cameron from '../../assets/cameron.png'
+import { Link } from 'react-router-dom'
 
-const Sidebar = ({sidebar, setSidebar}) => {
+const Sidebar = ({cat, setCat, sidebar, setSidebar}) => {
   return (
     <>
       <div className={`overlay ${sidebar? "active":""}`} onClick={()=>setSidebar(prev => !prev)}></div>
@@ -26,19 +27,19 @@ const Sidebar = ({sidebar, setSidebar}) => {
           <button onClick={()=>setSidebar(prev => !prev)} >
             <img className='nav-icon' src={menu_icon} alt="" />
           </button>
-          <img className='logo' src={logo} alt="" />
+          <Link to='/'><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="sidelinks">
           <div className="categories">
-            <button><img src={home} alt="" /><p>Home</p></button>
-            <button><img src={game_icon} alt="" /><p>Gaming</p></button>
-            <button><img src={automobiles} alt="" /><p>Automobiles</p></button>
-            <button><img src={sports} alt="" /><p>Sports</p></button>
-            <button><img src={entertainment} alt="" /><p>Entertainment</p></button>
-            <button><img src={tech} alt="" /><p>Technology</p></button>
-            <button><img src={music} alt="" /><p>Music</p></button>
-            <button><img src={blogs} alt="22" /><p>Blogs</p></button>
-            <button><img src={news} alt="25" /><p>News</p></button>
+            <Link to='/'><button className={`${cat === 0? 'active':''}`} onClick={()=>{setCat(0); setSidebar(false);}}><img src={home} alt="" /><p>Home</p></button></Link>
+            <Link to='/'><button className={`${cat === 20? 'active':''}`} onClick={()=>{setCat(20); setSidebar(false);}}><img src={game_icon} alt="" /><p>Gaming</p></button></Link>
+            <Link to='/'><button className={`${cat === 2? 'active':''}`} onClick={()=>{setCat(2); setSidebar(false);}}><img src={automobiles} alt="" /><p>Automobiles</p></button></Link>
+            <Link to='/'><button className={`${cat === 17? 'active':''}`} onClick={()=>{setCat(17); setSidebar(false);}}><img src={sports} alt="" /><p>Sports</p></button></Link>
+            <Link to='/'><button className={`${cat === 24? 'active':''}`} onClick={()=>{setCat(24); setSidebar(false);}}><img src={entertainment} alt="" /><p>Entertainment</p></button></Link>
+            <Link to='/'><button className={`${cat === 28? 'active':''}`} onClick={()=>{setCat(28); setSidebar(false);}}><img src={tech} alt="" /><p>Technology</p></button></Link>
+            <Link to='/'><button className={`${cat === 10? 'active':''}`} onClick={()=>{setCat(10); setSidebar(false);}}><img src={music} alt="" /><p>Music</p></button></Link>
+            <Link to='/'><button className={`${cat === 22? 'active':''}`} onClick={()=>{setCat(22); setSidebar(false);}}><img src={blogs} alt="" /><p>Blogs</p></button></Link>
+            <Link to='/'><button className={`${cat === 25? 'active':''}`} onClick={()=>{setCat(25); setSidebar(false);}}><img src={news} alt="" /><p>News</p></button></Link>
           </div>
           <hr />
           <div className="subscribed">

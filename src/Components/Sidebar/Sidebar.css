@@ -44,6 +44,9 @@
     .sidelinks button:hover{
         @apply bg-neutral-200;
     }
+    .sidelinks button.active{
+        @apply bg-neutral-200 hover:bg-neutral-300;
+    }
 
     .sidelinks img{
         @apply w-6;
