@@ -9,3 +9,13 @@ export const valueConverter = (value) => {
         return value
     }
 }
+
+export const fetchData = async (url) => {
+    try{
+      const res = await fetch(url);
+      const data = await res.json();
+      return data.items;
+    } catch(err){
+      console.error('Error fetching data: ', err);
+    }
+}

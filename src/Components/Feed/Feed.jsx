@@ -9,34 +9,33 @@ import thumbnail6 from '../../assets/thumbnail6.png'
 import thumbnail7 from '../../assets/thumbnail7.png'
 import thumbnail8 from '../../assets/thumbnail8.png'
 import { Link } from 'react-router-dom'
-import { API_KEY, valueConverter } from '../../data'
+import { API_KEY, fetchData, valueConverter } from '../../data'
 import moment from 'moment'
 
 const Feed = ({cat}) => {
 
-    const [data, setData] = useState([]);
+    const [apiData, setApiData] = useState([]);
 
-    const fetchData = async () => {
-        const vidList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=SG&videoCategoryId=${cat}&key=${API_KEY}`
-        
-        try{
-            const res = await fetch(vidList_url);
-            const data = await res.json();
-            setData(data.items)
-        } catch (err){
-            console.error('Error fetching data:', err)
-        }
-    }
+    const vidList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=SG&videoCategoryId=${cat}&key=${API_KEY}`
 
     useEffect(()=>{
-        fetchData();
+        const loadData = async () => {
+            try{
+                const vidList = await fetchData(vidList_url);
+                setApiData(vidList);
+            } catch(err){
+                console.error('Error loading data: ',err)
+            }
+        }
+
+        loadData();
     },[cat])
 
   return (
     <div className="feed">
-        {data.map((item, index)=>{
+        {apiData.map((item, index)=>{
             return(
-                <Link to={`video/${item.snippet.categoryid}/${item.id}`} className='card'>
+                <Link to={`video/${item.snippet.categoryId}/${item.id}`} className='card'>
                     <img src={item.snippet.thumbnails.standard.url} alt="" /> 
                     <div className="textdiv">
                         <h2>{item.snippet.title}</h2>

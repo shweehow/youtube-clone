@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Recommended.css'
 import thumbnail1 from '../../assets/thumbnail1.png'
 import thumbnail2 from '../../assets/thumbnail2.png'
@@ -8,75 +8,46 @@ import thumbnail5 from '../../assets/thumbnail5.png'
 import thumbnail6 from '../../assets/thumbnail6.png'
 import thumbnail7 from '../../assets/thumbnail7.png'
 import thumbnail8 from '../../assets/thumbnail8.png'
+import { API_KEY, fetchData, valueConverter } from '../../data'
+import moment from 'moment'
+import { Link } from 'react-router-dom'
 
-const Recommended = () => {
+const Recommended = ({catId}) => {
+
+  const [apiData, setApiData] = useState([]);
+
+  const recList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=SG&videoCategoryId=${catId}&key=${API_KEY}`
+
+  useEffect(() => {
+    const loadData = async () => {
+      try{
+        const recommends = await fetchData(recList_url);
+        setApiData(recommends);
+      } catch(err){
+        console.error('Error loading data: ',err)
+      }
+    }
+
+    loadData();
+  },[catId])
+
   return (
     <div className='recommended'>
       <h1>Recommended</h1>
-      <div className="rec-card">
-        <img src={thumbnail1} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
-      <div className="rec-card">
-        <img src={thumbnail2} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
-      <div className="rec-card">
-        <img src={thumbnail3} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
-      <div className="rec-card">
-        <img src={thumbnail4} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
-      <div className="rec-card">
-        <img src={thumbnail5} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
-      <div className="rec-card">
-        <img src={thumbnail6} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
-      <div className="rec-card">
-        <img src={thumbnail7} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
-      <div className="rec-card">
-        <img src={thumbnail8} alt="" />
-        <div className="rec-card-r">
-            <h3>Best channel that help you become a web developer</h3>
-            <span>GreatStack</span>
-            <span>20k views &bull; 3 days ago</span>
-        </div>
-      </div>
+      {apiData.map((item, index) => {
+        return(
+          <Link to={`/video/${item.snippet.categoryId}/${item.id}`}>
+            <div className="rec-card">
+              <img src={item.snippet.thumbnails.medium.url} alt="" />
+              <div className="rec-card-r">
+                  <h3>{item.snippet.title}</h3>
+                  <span>{item.snippet.channelTitle}</span>
+                  <span>{valueConverter(item.statistics.viewCount)} views &bull; {moment(item.snippet.publishedAt).fromNow()}</span>
+              </div>
+            </div>
+          </Link>
+        )
+      })}
     </div>
   )
 }
