@@ -6,7 +6,7 @@
     }
 
     .playVideo iframe{
-        @apply rounded-xl;
+        @apply relative -left-6 w-screen lg:left-0 lg:w-auto lg:rounded-xl;
         aspect-ratio: 16/9;
     }
 
@@ -18,8 +18,12 @@
         @apply flex gap-2.5 items-center ;
     }
 
+    .subcount h2{
+        @apply max-w-[165px] md:w-fit;
+    }
+
     .buttonsdiv{
-        @apply flex justify-between;
+        @apply flex justify-between gap-2.5 flex-wrap;
     }
 
     .buttonsdiv button{
@@ -53,7 +57,7 @@
     }
 
     .buttons-r{
-        @apply flex gap-1.5;
+        @apply flex items-center gap-1.5;
     }
 
     .vid-desc{

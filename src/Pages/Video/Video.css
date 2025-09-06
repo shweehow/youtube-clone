@@ -2,7 +2,7 @@
 
 @layer components{
     .playCon{
-        @apply flex gap-6 px-6 pt-20;
+        @apply flex gap-6 px-6 pt-15 lg:pt-20;
     }
 
     .playCon .rec-section{
